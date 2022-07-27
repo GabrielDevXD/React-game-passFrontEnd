@@ -26,7 +26,7 @@ export const Games = [
     gameplayYouTubeUrl: "https://www.youtube.com/watch?v=TsczFwJ4Eag",
   },
   {
-    id: 4,
+    id: 3,
     title: "Valorante",
     coverImageUrl:
       "https://cdn1.dotesports.com/wp-content/uploads/sites/3/2022/04/19142334/Fade-Valorant-2048x1152-1.jpeg",
