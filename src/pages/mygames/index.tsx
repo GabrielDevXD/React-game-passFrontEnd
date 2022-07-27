@@ -1,19 +1,19 @@
-import CardGames from "components/CardGames/List";
-import GenrerOption from "components/GenrerOption/GenrerOption";
-import ReturnPage from "components/ReturnPage";
-import SearchGames from "components/Search/Games";
-import React, { useEffect, useState } from "react";
-import ReactStars from "react-stars";
-import { useNavigate } from "react-router-dom";
-import { GetGames } from "Service/gamesService";
-import { GamesTypes } from "types/interfaces";
-import * as Style from "./style";
+import CardGames from 'components/CardGames/List';
+import GenrerOption from 'components/GenrerOption/GenrerOption';
+import ReturnPage from 'components/ReturnPage';
+import SearchGames from 'components/Search/Games';
+import React, { useEffect, useState } from 'react';
+import ReactStars from 'react-stars';
+import { useNavigate } from 'react-router-dom';
+import { GetGames } from 'Service/gamesService';
+import { GamesTypes } from 'types/interfaces';
+import * as Style from './style';
 
 const LibraryAllGames = () => {
   const navigate = useNavigate();
 
   const [games, setGames] = useState<GamesTypes[]>([]);
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
     getAllGames();
@@ -37,20 +37,20 @@ const LibraryAllGames = () => {
 
         <Style.Categorie>
           <Style.SectionSearch>
-            Todos os jogos disponiveis na plataforma
+            All games available on the platform
           </Style.SectionSearch>
         </Style.Categorie>
 
         <GenrerOption />
 
         <Style.ContainerCard>
-          {search !== ""
+          {search !== ''
             ? games
                 .filter(
                   (e: GamesTypes) =>
                     e.title.toLowerCase().includes(search.toLowerCase()) ||
                     e.year.toFixed().includes(search.toLowerCase()) ||
-                    e.imbScore.toFixed().includes(search.toLowerCase())
+                    e.imbScore.toFixed().includes(search.toLowerCase()),
                 )
                 .map((game) => (
                   <CardGames
@@ -70,7 +70,7 @@ const LibraryAllGames = () => {
                       value={game.imbScore}
                       edit={false}
                       size={35}
-                      color2={"#ffd700"}
+                      color2={'#ffd700'}
                     />
                   </CardGames>
                 ))
@@ -92,7 +92,7 @@ const LibraryAllGames = () => {
                     value={game.imbScore}
                     edit={false}
                     size={35}
-                    color2={"#ffd700"}
+                    color2={'#ffd700'}
                   />
                 </CardGames>
               ))}
