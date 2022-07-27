@@ -10,6 +10,9 @@ import ReturnPage from "components/ReturnPage";
 
 const SingUp = () => {
   const navigate = useNavigate();
+const handleNavigate = () => {
+    navigate('/login')
+  }
 
   const [values, setValues] = useState<RegisterUser>({
     name: "",
