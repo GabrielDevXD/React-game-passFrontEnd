@@ -16,11 +16,18 @@ const CrudGenrer = () => {
     name: "",
   });
 
-  const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName((name: CreateGenrerType) => ({
-      ...name,
-      [e.target.name]: e.target.value,
-    }));
+ const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name === "year" || e.target.name === "imbScore") {
+      setGame((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    } else {
+      setGame((value: CreateGameType) => ({
+        ...value,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   const createGenrer = async (e: React.FormEvent<HTMLFormElement>) => {
